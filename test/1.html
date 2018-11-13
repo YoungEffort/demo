@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学习语法</title>
+</head>
+
+<body>
+    <div id="p">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <script>
+        var p = document.getElementById("p");
+        // var pText = p.firstChild;
+        // console.log(pText)
+        var range1 = document.createRange();
+        range1.selectNode(p);
+        var div = document.createElement("div");
+        div.style.backgroundColor = "yellow";
+        range1.surroundContents(div);
+    </script>
+    
+</body>
+
+</html>
