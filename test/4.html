@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简单实用图形验证码原生js特效代码</title>
+		<meta name="description" content="简单实用图形验证码原生js特效代码。" /> 
+		<meta name="keywords" content="简单实用,图形验证码,原生js,特效代码" />
+		<meta name="author" content="js代码" />
+		<meta name="Copyright" content="js代码" />
+		<script type="text/javascript">
+function stops(){
+   return false;
+}
+document.oncontextmenu=stops;
+</script>
+	</head>
+	<body>
+		<div id="v_container" style="width: 200px;height: 50px;"></div>
+		<input type="text" id="code_input" value="" placeholder="请输入验证码"/><button id="my_button">验证</button>
+	</body>
+	<script src="http://www.jsdaima.com/Upload/201703/1490701707/gVerify.js"></script>
+	<script>
+		var verifyCode = new GVerify("v_container");
+
+		document.getElementById("my_button").onclick = function(){
+			var res = verifyCode.validate(document.getElementById("code_input").value);
+			if(res){
+				alert("验证正确");
+			}else{
+				alert("验证码错误");
+			}
+		}
+	</script>
+</html>
